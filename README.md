@@ -2,6 +2,44 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
+Here are teh steps we used to Generate and add AOS to this Angular project.
+
+### 1.)  ng new angular-aos --style scss --routing true
+cd angular-aos/
+
+installing the Animate On Scroll (AOS) library.
+npm install aos
+npm i --save-dev @types/aos
+(Optional) npm install --save @types/aos
+
+
+### 2.) update the styles array in the angular.json
+Angular.json From ---> To
+
+            "styles": [
+              "src/styles.scss"
+            ],
+
+            "styles": [
+              "src/styles.scss",
+              "node_modules/aos/dist/aos.css"
+            ],
+
+### 3.) Initializing/ Animating with the Animate On Scroll Library (AOS).
+import * as Aos from 'aos';
+
+### 4.) init() function in the ngOnInit of our component.ts
+Aos.init();
+
+### 5.) Test from component.html
+
+<div data-aos="fade-up" data-aos-duration="3000">
+  Lord Shiva is Great!!!
+</div>
+
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
